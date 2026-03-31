@@ -34,5 +34,8 @@ func main() {
 		})
 	})
 
-	router.Run(":" + cfg.Port)
+	err = router.Run(":" + cfg.Port)
+	if err != nil {
+		log.Fatal("Failed to start HTTP server:", err)
+	}
 }

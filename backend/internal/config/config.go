@@ -16,7 +16,7 @@ func Load() (*Config, error) {
 	var err error = godotenv.Load()
 
 	if err != nil {
-		log.Println("Error loading envs")
+		log.Printf("Error loading envs: %v", err)
 	}
 
 	var config *Config = &Config{
